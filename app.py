@@ -256,4 +256,5 @@ def update_charts(n_clicks, ticker, days):
         return (empty_fig, empty_fig, error_message, f"Error: {str(e)}", source, limit)
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    port = int(os.environ.get('PORT', 8050))
+    app.run(host='0.0.0.0', port=port, debug=False)
